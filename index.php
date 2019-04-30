@@ -21,7 +21,7 @@
 
             $.ajax({
                 type: 'GET',
-                url: "https://topup304cembackend.herokuapp.com:3000/getAllMovie",
+                url: "https://topup304cembackend.herokuapp.com/getAllMovie",
                 async: false,
                 success: function(data) {
                     for (var i = 0; i < data.length; i++) {
@@ -60,7 +60,7 @@
 
         function delMv(id) {
             if (confirm('Confirm???')) {
-                var link = "https://topup304cembackend.herokuapp.com:3000/delMv/" + id;
+                var link = "https://topup304cembackend.herokuapp.com/delMv/" + id;
                 $.ajax({
                     type: 'DELETE',
                     url: link,
@@ -86,7 +86,7 @@
         }
 
         function favMv(id) {
-            var link = "https://topup304cembackend.herokuapp.com:3000/favMv";
+            var link = "https://topup304cembackend.herokuapp.com/favMv";
             var data = {};
             <?php 
             if(isset($_SESSION['type']) && !empty($_SESSION['type'])){
@@ -116,7 +116,7 @@
 
         function checkfavMv(id, i) {
 
-            var link = "https://topup304cembackend.herokuapp.com:3000/getFav/" + id + "/" + "<?php if(isset($_SESSION['id']) && !empty($_SESSION['id'])){echo $_SESSION['id'];} ?>";
+            var link = "https://topup304cembackend.herokuapp.com/getFav/" + id + "/" + "<?php if(isset($_SESSION['id']) && !empty($_SESSION['id'])){echo $_SESSION['id'];} ?>";
             $.ajax({
                 type: 'GET',
                 contentType: 'application/json',

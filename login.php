@@ -10,7 +10,7 @@
     <script>
         $(document).ready(function() {
             $("#loginbtn").click(function() {
-                var url = 'https://topup304cembackend.herokuapp.com:3000/checkMember/' + document.getElementById("email").value + '/' + document.getElementById("pw").value;
+                var url = 'https://topup304cembackend.herokuapp.com/checkMember/' + document.getElementById("email").value + '/' + document.getElementById("pw").value;
                 $.ajax({
                     type: 'GET',
                     url: url,
@@ -44,7 +44,7 @@
                     type: 'POST',
                     data: JSON.stringify(data),
                     contentType: 'application/json',
-                    url: 'https://topup304cembackend.herokuapp.com:3000/reg',
+                    url: 'https://topup304cembackend.herokuapp.com/reg',
                     async: false,
                     success: function(data) {
                         if (data.decide) {
