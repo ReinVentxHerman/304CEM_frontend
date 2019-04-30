@@ -14,7 +14,7 @@
         $(document).ready(function() {
             <?php 
                 if (isset($_GET['id'])) {
-                    echo "var url='https://topup304cembackend.herokuapp.com/:3000/getAllFav/'+'".$_GET['id']."';";
+                    echo "var url='https://topup304cembackend.herokuapp.com:3000/getAllFav/'+'".$_GET['id']."';";
                 }
             ?>
 
@@ -26,7 +26,7 @@
                     var str;
                     for (var j = 0; j < e.length; j++) {
                         str = "";
-                        var link = 'https://topup304cembackend.herokuapp.com/:3000/getAllFavMv/' + e[j].mvid;
+                        var link = 'https://topup304cembackend.herokuapp.com:3000/getAllFavMv/' + e[j].mvid;
                         $.ajax({
                             type: 'GET',
                             url: link,
@@ -46,7 +46,7 @@
         });
 
         function checkfavMv(id, i) {
-            var link = "https://topup304cembackend.herokuapp.com/:3000/getFav/" + id + "/" + "<?php echo $_SESSION['id']; ?>";
+            var link = "https://topup304cembackend.herokuapp.com:3000/getFav/" + id + "/" + "<?php echo $_SESSION['id']; ?>";
             $.ajax({
                 type: 'GET',
                 contentType: 'application/json',
@@ -66,7 +66,7 @@
         }
 
         function unFavMv(id) {
-            var link = "https://topup304cembackend.herokuapp.com/:3000/unFav/" + id + "/" + "<?php echo $_SESSION['id']; ?>";
+            var link = "https://topup304cembackend.herokuapp.com:3000/unFav/" + id + "/" + "<?php echo $_SESSION['id']; ?>";
             $.ajax({
                 type: 'DELETE',
                 contentType: 'application/json',
@@ -80,7 +80,7 @@
 
         function delfavMv(id) {
             if (confirm('Confirm???')) {
-                var link = "https://topup304cembackend.herokuapp.com/:3000/delMv/" + id;
+                var link = "https://topup304cembackend.herokuapp.com:3000/delMv/" + id;
                 $.ajax({
                     type: 'DELETE',
                     url: link,
@@ -106,7 +106,7 @@
         }
 
         function favMv(id) {
-            var link = "https://topup304cembackend.herokuapp.com/:3000/favMv";
+            var link = "https://topup304cembackend.herokuapp.com:3000/favMv";
             var data = {};
             <?php 
             if(isset($_SESSION['type']) && !empty($_SESSION['type'])){
