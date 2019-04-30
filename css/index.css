@@ -1,0 +1,28 @@
+.main{
+    height: 80%;
+    padding: 1% 20%;
+}
+.addMovie {
+    display: none;
+    position: fixed;
+    margin: 2%;
+    bottom: 0;
+    right: 0;
+}
+.addMovie img{
+    width: 40px;
+    height: 40px;
+}
+#editbtn, #delbtn ,#favbtn{
+    width: 30px;
+    height: 30px;
+}
+#tbtitle{
+    width: 90%;
+}
+#tbtitle a{
+    color: black;
+}
+#tbtitle a:hover{
+    text-decoration-line: none;
+}

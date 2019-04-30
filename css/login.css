@@ -1,0 +1,53 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+    padding: 0 30%;
+}
+.float-r{
+    float: right;
+}
+.float-l{
+    float: left;
+}
+.main {
+    width: 100%;
+}
+
+.title,
+.fmDiv {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.fmDiv{
+    padding: 0 15%;
+}
+#pw ,#email{
+    padding: 20px;
+}
+.form-btn{
+    width: 100px;
+    margin: 1% 0;
+    padding: 2.5% 2.5%;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    border: none;
+    position: relative;
+    left:0;
+}
+.form-btn:hover {
+    color: #fff;
+    background-color: #0069d9;
+}
