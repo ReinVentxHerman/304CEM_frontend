@@ -12,7 +12,7 @@
     <script>
         function delCom(id, input) {
             if (confirm('Confirm???')) {
-                var link = "http://localhost:3000/delCom/" + id;
+                var link = "https://topup304cembackend.herokuapp.com/:3000/delCom/" + id;
                 $.ajax({
                     type: 'DELETE',
                     url: link,
@@ -29,7 +29,7 @@
         }
 
         function editCom(id,input) {
-            var link = "http://localhost:3000/editCom/" + id;
+            var link = "https://topup304cembackend.herokuapp.com/:3000/editCom/" + id;
             var data = {};
             data.comment=document.getElementById(input).value;
             $.ajax({
@@ -51,12 +51,12 @@
             <?php 
                 if (isset($_GET['id'])) {
                     echo "var id='".$_GET['id']."';";
-                    echo "var url='http://localhost:3000/editMv/'+id;";
+                    echo "var url='https://topup304cembackend.herokuapp.com/:3000/editMv/'+id;";
                     echo "var type='PUT';";
             ?>
             $.ajax({
                 type: 'GET',
-                url: 'http://localhost:3000/getMv/' + id,
+                url: 'https://topup304cembackend.herokuapp.com/:3000/getMv/' + id,
                 success: function(data) {
                     if (data) {
                         $("#title").val(data.title);
@@ -67,7 +67,7 @@
             });
             $.ajax({
                 type: 'GET',
-                url: 'http://localhost:3000/getCom/' + id,
+                url: 'https://topup304cembackend.herokuapp.com/:3000/getCom/' + id,
                 success: function(data) {
                     var str = "";
                     for (var i = 0; i < data.length; i++) {
@@ -87,7 +87,7 @@
             });
             <?php
                 }else{
-                    echo "var url='http://localhost:3000/addMovie';";
+                    echo "var url='https://topup304cembackend.herokuapp.com/:3000/addMovie';";
                     echo "var type='POST';";
                 }
             ?>
@@ -119,7 +119,7 @@
                     type: "POST",
                     data: JSON.stringify(data),
                     contentType: 'application/json',
-                    url: 'http://localhost:3000/addCom',
+                    url: 'https://topup304cembackend.herokuapp.com/:3000/addCom',
                     success: function(data) {
                         if (data) {
                             window.location.reload();
