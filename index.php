@@ -24,6 +24,7 @@
                 url: "https://topup304cembackend.herokuapp.com/getAllMovie",
                 async: false,
                 success: function(data) {
+                    console.log(data);
                     for (var i = 0; i < data.length; i++) {
                         var ExMovie="";
                         var FtMovie="";
@@ -45,9 +46,10 @@
                                 FtMovie += "<td><img src='img/fav.png' onclick='favMv(\"" + data[i]._id + "\")' id='favbtn'/></td>";
                             }
                             FtMovie += "</tr>";
-                            $("#schedule-table").append(FtMovie);
-                            $("#ex-schedule-table").append(ExMovie);
+                            
                         }
+                        $("#schedule-table").append(FtMovie);
+                        $("#ex-schedule-table").append(ExMovie);
                         if(checkType()){
                           checkfavMv(data[i]._id, i);  
                         }
